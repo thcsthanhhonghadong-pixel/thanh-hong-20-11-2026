@@ -1,0 +1,14 @@
+(function(){'use strict';
+const bar=document.getElementById('readProgress');let raf=0;
+function progress(){if(raf)return;raf=requestAnimationFrame(()=>{const root=document.documentElement,total=root.scrollHeight-root.clientHeight;bar.style.width=(total?Math.max(0,Math.min(100,root.scrollTop/total*100)):0)+'%';raf=0;});}
+window.addEventListener('scroll',progress,{passive:true});window.addEventListener('resize',progress,{passive:true});progress();
+const dialog=document.getElementById('lightbox'),dlgImg=document.getElementById('lightboxImage'),dlgCaption=document.getElementById('lightboxCaption');const close=document.getElementById('lightboxClose');let last=null;
+if(dialog&&typeof dialog.showModal==='function'){
+ document.querySelectorAll('.photo-open').forEach(btn=>{btn.addEventListener('click',()=>{last=btn;dlgImg.src=btn.dataset.src||'';dlgImg.alt=btn.querySelector('img')?.alt||'';dlgCaption.textContent=btn.dataset.caption||'';dialog.showModal();});});
+ close.addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close();});dialog.addEventListener('close',()=>{dlgImg.removeAttribute('src');if(last)last.focus({preventScroll:true});});
+}
+const notice=document.getElementById('notice');let timer;function toast(s){notice.textContent=s;notice.classList.add('show');clearTimeout(timer);timer=setTimeout(()=>notice.classList.remove('show'),2700);}
+const share=document.getElementById('shareButton');if(share){share.addEventListener('click',async()=>{if(location.protocol==='file:'){toast('Hãy mở bài trên website để chia sẻ liên kết.');return;}const url=location.href;try{if(navigator.share){await navigator.share({title:document.title,url});return;}}catch(e){if(e.name==='AbortError')return;}
+ try{await navigator.clipboard.writeText(url);toast('Đã sao chép liên kết bài báo.');}catch(e){try{const tmp=document.createElement('textarea');tmp.value=url;document.body.append(tmp);tmp.select();document.execCommand('copy');tmp.remove();toast('Đã sao chép liên kết bài báo.');}catch(e){toast('Bạn có thể sao chép đường dẫn từ thanh địa chỉ.');}}});}
+const nav=document.querySelectorAll('[data-nav]'),sections=[...document.querySelectorAll('section[id]')];if('IntersectionObserver' in window){const io=new IntersectionObserver(entries=>{for(const e of entries){if(e.isIntersecting){for(const a of nav){const active=a.getAttribute('href')==='#'+e.target.id;a.classList.toggle('active',active);if(active)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');}}}},{rootMargin:'-20% 0px -55% 0px',threshold:0});sections.forEach(s=>io.observe(s));}
+})();

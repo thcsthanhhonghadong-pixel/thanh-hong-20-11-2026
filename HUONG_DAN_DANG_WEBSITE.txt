@@ -1,0 +1,51 @@
+PHIÊN BẢN CẬP NHẬT 22/11/2026: Đã sửa lỗi dấu tiếng Việt bị tách trong phần nội dung bài viết.
+
+HƯỚNG DẪN ĐĂNG BÀI BÁO ĐA PHƯƠNG TIỆN LÊN WEBSITE
+TRƯỜNG THCS THANH HỒNG – KỶ NIỆM NGÀY NHÀ GIÁO VIỆT NAM 20/11/2026
+
+1. NỘI DUNG BỘ FILE
+   index.html       Trang bài báo hoàn chỉnh (mở bằng trình duyệt).
+   styles.css       Bố cục giao diện, thiết kế đáp ứng điện thoại/máy tính.
+   app.js           Xem ảnh lớn, nút chia sẻ, thanh tiến độ đọc.
+   favicon.svg      Biểu tượng trang.
+   images/          Ảnh gốc tối ưu hóa, poster video.
+   videos/          4 video MP4 có tiếng, gốc do nhà trường cung cấp.
+
+2. CÁCH ĐĂNG TỐT NHẤT – CHO WEBSITE CHO PHÉP TẢI FILE/FTP
+   a) Giải nén toàn bộ tệp ZIP.
+   b) Tải NGUYÊN THƯ MỤC chứa index.html, images/, videos/, styles.css, app.js lên
+      máy chủ website. Ví dụ: public_html/tin-tuc/ngay-nha-giao-20-11-2026/
+   c) Truy cập địa chỉ tương ứng:
+      https://TEN-MIEN-TRUONG/tin-tuc/ngay-nha-giao-20-11-2026/
+   d) Trên mục Tin tức của website trường, tạo một bài giới thiệu ngắn,
+      dẫn liên kết tới trang phóng sự đa phương tiện.
+
+3. CÁCH NHÚNG BÀI VÀO TRANG TIN HIỆN CÓ
+   Nếu CMS cho phép mã nhúng iframe, tham khảo file MA_NHUNG_WEBSITE.txt.
+   Thay đường dẫn ví dụ bằng URL thực tế của thư mục bài báo đã tải lên.
+   Nếu trang tin chặn iframe/HTML, đăng một liên kết mở trang bài báo độc lập.
+
+4. KIỂM TRA SAU KHI ĐĂNG
+   - Kiểm tra ảnh tải đầy đủ, không báo lỗi 404.
+   - Bấm phát thử đủ 4 video, kiểm tra tiếng.
+   - Kiểm tra trên điện thoại, màn hình máy tính và các trình duyệt chính.
+   - Kiểm tra giới hạn dung lượng upload, quyền truy cập và cấu hình MIME MP4
+     của máy chủ; ZIP toàn bộ có thể lớn hơn giới hạn tải qua CMS.
+   - Mở trang bằng HTTPS để nút chia sẻ/sao chép liên kết hoạt động thuận lợi.
+
+5. LƯU Ý BIÊN TẬP
+   - Ảnh và video dựa trên tư liệu do người dùng cung cấp, không tạo thêm nhân vật.
+   - Không nêu tên, chức danh cụ thể khi chưa có thông tin xác minh.
+   - Ảnh và video được xếp theo mạch bài viết, không xác nhận lịch biểu diễn chính thức.
+   - Nếu ngày tổ chức thực tế không phải 20/11/2026, cần chỉnh ngày trong index.html.
+
+Bộ file này hoạt động độc lập, không dùng thư viện hay font tải từ mạng.
+
+
+6. CAP NHAT BAN SUA LOI CHU (22/11/2026)
+   - Da bo dan chu bat thuong o tieu de chinh, tieu de muc va tieu de video.
+   - Tieu de chinh su dung font thong dung ho tro day du dau tieng Viet.
+   - Neu da tai ban cu len website: chi can ghi de index.html va styles.css.
+   - Lam moi trang (Ctrl + F5) de trinh duyet nap lai file CSS moi.
+   - Neu he thong quan tri website tu them CSS can deu, nen dang nhu mot
+     chuyen trang HTML rieng hoac nhung qua iframe de tranh xung dot CSS.
